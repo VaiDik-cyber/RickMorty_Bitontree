@@ -13,12 +13,6 @@ function NavLocation() {
   const [error, setError] = useState(null);
   const [selectedLocation, setLocation] = useState(1);
 
-  const formattedDate = (dateString: string) => {
-    const options = { year: "numeric", month: "long", day: "numeric" };
-    const date = new Date(dateString);
-    return date.toLocaleDateString(undefined, options);
-  };
-
   const episodeIds = Array.from({ length: 121 }, (_, i) => i + 1);
   const episodeApi = `https://rickandmortyapi.com/api/location/${selectedLocation}`;
   const { data: location } = useFetch("", episodeApi);
